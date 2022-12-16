@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta name="code" charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes"/>
+	<script type="" src="STATIC/js/common.js" defer></script>
+	<script type="" src="STATIC/js/swiper-bundle.min.js" defer></script>
+	<script type="" src="STATIC/js/modal.js" defer></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<link rel="stylesheet" type="text/css" href="STATIC/css/swiper-bundle.min.css"/>
+	<link rel="stylesheet" type="text/css" href="STATIC/css/style.css"/>
+</head>
+<body>
+	<main id="main" class="aside-page">
+		<div class="aside-container">
+			<div class="asideBtn">
+				<div class="bugger">
+					<i class="bar"></i>
+				</div>
+			</div>
+			<div class="stiky-wrap">
+				<a href="대시보드.html" class="logo"><img src="STATIC/img/logo/로고.png" alt="로고"></a>
+				<ul class="aside-menu">
+					<li><a href="대시보드.html"><img src="STATIC/img/icon/home.png">대시보드</a></li>
+					<li class="active"><a href="캐드뷰어.html"><img src="STATIC/img/icon/cad.png">캐드뷰어</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- vh-container -->
+		<div class="container"> 
+			<div class="container-head">
+				<a href="" class="signBtn">
+					<img src="STATIC/img/icon/user.png">
+				</a>
+			</div>
+			<div class="container-body">
+				<div class="inner">
+					<div class="content-head">
+						<div class="title">캐드뷰어</div>
+					</div>
+					<div class="cad-view-wrap">
+						<div class="viewer-row">
+							<!-- 캐드뷰어 -->
+							<div class="viewer-item">
+								<div class="viewer-head">
+									<div class="title">캐드뷰어</div>
+								</div>
+								<div class="viewer-body">
+									<div class="cad-viewer">
+										<canvas></canvas>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="viewer-row">
+							<!-- 도면리스트 -->
+							<div class="viewer-item">
+								<div class="viewer-head">
+									<div class="title">도면 리스트</div>
+									<div class="tool">
+										<button type="button" class="btn btn-plus btn-primary" id="addBtn">추가</button>
+										<button type="button" class="btn btn-minus btn-primary">삭제</button>
+									</div>
+								</div>
+								<div class="viewer-body">
+									<div class="cad-table">
+										<table>
+											<thead>
+												<tr>
+													<th>파일</th>
+													<th>도면명</th>
+													<th>버전</th>
+													<th>비고1</th>
+													<th>비고2</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><span>CAD_20221214</span></td>
+													<td><span>도면1</span></td>
+													<td><span>Ver.01</span></td>
+													<td><span>제목</span></td>
+													<td><span>제목</span></td>
+												</tr>
+												<tr>
+													<td><span>CAD_20221214</span></td>
+													<td><span>도면1</span></td>
+													<td><span>Ver.01</span></td>
+													<td><span>제목</span></td>
+													<td><span>제목</span></td>
+												</tr>
+												<tr>
+													<td><span>CAD_20221214</span></td>
+													<td><span>도면1</span></td>
+													<td><span>Ver.01</span></td>
+													<td><span>제목</span></td>
+													<td><span>제목</span></td>
+												</tr>
+												<tr>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<!-- 설정-->
+							<div class="viewer-item">
+								<div class="viewer-head">
+									<div class="title">설정</div>
+									<div class="tool">
+										<button type="button" class="btn btn-save btn-primary">저장</button>
+									</div>
+								</div>
+								<div class="viewer-body">
+									<div class="field-row">
+										<div class="field-head">파일</div>
+										<div class="field-area">
+											<div class="field" id="fileReader">
+												<div class="uploadInp" id="uploadInp">
+													<input type="file" name="" class="fileInp">
+													<label class="fileOutput">파일 선택</label>
+												</div>
+												<button class="btn uploadBtn"><img src="STATIC/img/icon/icon_plus.png"></button>
+											</div>
+										</div>
+									</div>
+									<div class="field-row">
+										<div class="field-head">설비 선택</div>
+										<div class="field-area">
+											<div class="field">
+												<div class="select-wrap">
+													<select id="selector">
+														<option selected>목록을 선택해주세요...</option>
+														<option>설비 A</option>
+														<option>설비 B</option>
+														<option>설비 C</option>
+													</select>
+												</div>
+												<button class="btn selectBtn"><img src="STATIC/img/icon/icon_select.png"></button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container-foot">
+				<div class="localTime">Local Time : 2022.12.12 AM 11:35:30</div>
+			</div>
+		</div>
+	</main>
+	<div class="modal">
+		<div class="modal-wrap">
+			<div class="modal-content">
+				<div class="modal-close closeBtn"></div>
+				<div class="modal-head">도면추가</div>
+				<div class="modal-body">
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">파일</div>
+							<button class="uploadBtn">불러오기</button>
+						</div>
+						<div class="field-value">
+							<input type="file" name="" class="fileInp">
+							<label class="fileOutput">파일 선택</label>
+						</div>
+					</div>
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">도면명</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="도면명을 입력해 주세요.">
+						</div>
+					</div>
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">버전</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="버전을 입력해 주세요.">
+						</div>
+					</div>
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">비고1</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="비고1를 입력해 주세요.">
+						</div>
+					</div>
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">비고2</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="비고2를 입력해 주세요.">
+						</div>
+					</div>
+				</div>
+				<div class="modal-foot">
+					<button class="btn btn-primary submit">저장</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+	    document.addEventListener('DOMContentLoaded', function(){
+	    	var file = new fileReader('#fileReader'); // 설정 file
+	    	var file2 = new fileReader('#fileReader2'); // 도면리스트 file
+	    	var select = new SelectItem('#selector'); // 설비선택
+
+	    	var callback = function(){
+	    		alert('전송');
+	    		pop.close();
+	    	}
+	    	var pop = new modal('.modal', callback);
+	    	var addBtn = document.querySelector('#addBtn');
+	    	addBtn.addEventListener('click', function(e) {
+	        	e.preventDefault();
+	    		pop.open();
+	        });
+	    });
+	</script>
+</body>
+</html>

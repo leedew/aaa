@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta name="code" charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes"/>
+	<script type="" src="STATIC/js/common.js"></script>
+	<script type="" src="STATIC/js/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	<script type="" src="STATIC/js/modal.js"></script>
+	<link rel="stylesheet" type="text/css" href="STATIC/css/swiper-bundle.min.css"/>
+	<link rel="stylesheet" type="text/css" href="STATIC/css/style.css"/>
+</head>
+<body>
+	<main id="main" class="aside-page">
+		<div class="aside-container">
+			<div class="asideBtn">
+				<div class="bugger">
+					<i class="bar"></i>
+				</div>
+			</div>
+			<div class="stiky-wrap">
+				<a href="대시보드.html" class="logo"><img src="STATIC/img/logo/로고.png" alt="로고"></a>
+				<ul class="aside-menu">
+					<li class="active"><a href="대시보드.html"><img src="STATIC/img/icon/home.png">대시보드</a></li>
+					<li><a href="캐드뷰어.html"><img src="STATIC/img/icon/cad.png">캐드뷰어</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- vh-container -->
+		<div class="container"> 
+			<div class="container-head">
+				<a href="" class="signBtn">
+					<img src="STATIC/img/icon/user.png">
+				</a>
+			</div>
+			<div class="container-body">
+				<div class="inner">
+					<div class="content-head">
+						<div class="title">대시보드</div>
+						<div class="head-right">
+							<button class="btn btn-primary btn-plus" id="addBtn">추가</button>
+						</div>
+					</div>
+					<div class="slide-controll-wrap">		
+						<div class="swiper-container" id="item-slide-01">
+							<div class="swiper-wrapper">
+								<!-- run -->
+								<div class="swiper-slide">
+									<div class="state-item">
+										<div class="em-name"><span>설비A</span></div>
+										<div class="em-data">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">가동상태</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="circle run"></div>
+														<div class="text">RUN</div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">가동율</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="number">30<span class="unit">%</span></div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">생산량</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="number">180<span class="unit">EA</span></div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+										</div>
+										<div class="em-info">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">생산정보</div>
+													<span class="time">30초 전</span>
+												</div>
+												<div class="block-cont">
+													<div class="state-table">
+														<table>
+															<tbody>
+																<tr>
+																	<td>생산시간</td>
+																	<td>00:00:15</td>
+																</tr>
+																<tr>
+																	<td>알람코드</td>
+																	<td>0</td>
+																</tr>
+																<tr>
+																	<td>툴번호</td>
+																	<td>121</td>
+																</tr>
+																<tr>
+																	<td>프로그램</td>
+																	<td>96</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="em-chart">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">스핀들 부하/RPM</div>
+													<span class="time">30초 전</span>
+												</div>
+												<div class="block-cont">
+													<div class="chart-wrap">
+														<div id="legend-div" class="legend-div"></div>
+														<canvas id="myChart"></canvas>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- wait -->
+								<div class="swiper-slide">
+									<div class="state-item">
+										<div class="em-name"><span>설비A</span></div>
+										<div class="em-data">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">가동상태</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="circle wait"></div>
+														<div class="text">WAIT</div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">가동율</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="number">30<span class="unit">%</span></div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">생산량</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="number">180<span class="unit">EA</span></div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+										</div>
+										<div class="em-info">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">생산정보</div>
+													<span class="time">30초 전</span>
+												</div>
+												<div class="block-cont">
+													<div class="state-table">
+														<table>
+															<tbody>
+																<tr>
+																	<td>생산시간</td>
+																	<td>00:00:15</td>
+																</tr>
+																<tr>
+																	<td>알람코드</td>
+																	<td>0</td>
+																</tr>
+																<tr>
+																	<td>툴번호</td>
+																	<td>121</td>
+																</tr>
+																<tr>
+																	<td>프로그램</td>
+																	<td>96</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="em-chart">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">스핀들 부하/RPM</div>
+													<span class="time">30초 전</span>
+												</div>
+												<div class="block-cont">
+													<div class="chart-wrap">
+														<div id="legend-div02" class="legend-div"></div>
+														<canvas id="myChart02"></canvas>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- stop -->
+								<div class="swiper-slide">
+									<div class="state-item">
+										<div class="em-name"><span>설비A</span></div>
+										<div class="em-data">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">가동상태</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="circle stop"></div>
+														<div class="text">STOP</div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">가동율</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="number">30<span class="unit">%</span></div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">생산량</div>
+												</div>
+												<div class="block-cont">
+													<div class="state">
+														<div class="number">180<span class="unit">EA</span></div>
+													</div>
+													<div class="time">10초전</div>
+												</div>
+											</div>
+										</div>
+										<div class="em-info">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">생산정보</div>
+													<span class="time">30초 전</span>
+												</div>
+												<div class="block-cont">
+													<div class="state-table">
+														<table>
+															<tbody>
+																<tr>
+																	<td>생산시간</td>
+																	<td>00:00:15</td>
+																</tr>
+																<tr>
+																	<td>알람코드</td>
+																	<td>0</td>
+																</tr>
+																<tr>
+																	<td>툴번호</td>
+																	<td>121</td>
+																</tr>
+																<tr>
+																	<td>프로그램</td>
+																	<td>96</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="em-chart">
+											<div class="em-block">
+												<div class="block-head">
+													<div class="title">스핀들 부하/RPM</div>
+													<span class="time">30초 전</span>
+												</div>
+												<div class="block-cont">
+													<div class="chart-wrap">
+														<div id="legend-div03" class="legend-div"></div>
+														<canvas id="myChart03"></canvas>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<button type="button" class="button swiper-button-prev item-prev01"><i class="fa fa-angle-left" aria-hidden="true"></i></button>
+						<button type="button" class="button swiper-button-next item-next01"><i class="fa fa-angle-right" aria-hidden="true"></i></button>
+					</div>
+				</div>
+				
+			</div>
+			<div class="container-foot">
+				<div class="localTime">Local Time : 2022.12.12 AM 11:35:30</div>
+			</div>
+		</div>
+	</main>
+	<!-- pop modal -->
+	<div class="modal">
+		<div class="modal-wrap">
+			<div class="modal-content">
+				<div class="modal-close closeBtn"></div>
+				<div class="modal-head">도면추가</div>
+				<div class="modal-body">
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">설비명</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="설비명을 입력해 주세요.">
+						</div>
+					</div>
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">IP주소</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="IP주소를 입력해 주세요.">
+						</div>
+					</div>
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">비고1</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="비고1를 입력해 주세요.">
+						</div>
+					</div>
+					<div class="field" id="fileReader2">
+						<div class="field-head">
+							<div class="title">비고2</div>
+						</div>
+						<div class="field-value">
+							<input type="text" name="" class="" placeholder="비고2를 입력해 주세요.">
+						</div>
+					</div>
+				</div>
+				<div class="modal-foot">
+					<button class="btn btn-primary submit">저장</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- slide js -->
+	<script type="text/javascript">
+		var itemSlide01 = new Swiper("#item-slide-01", {
+	        slidesPerView: 'auto',
+	        slidesPerGroup : 1,
+	        spaceBetween: 0,
+	        allowTouchMove : true,
+			navigation: {
+	          nextEl: ".item-next01",
+	          prevEl: ".item-prev01",
+	        },
+	    });
+	</script>
+
+	<!--  chart js -->
+	<script type="text/javascript">
+		window.onload = function () {
+			/* 설비 차트 */
+		    chartDraw(chartData, 'myChart', 'legend-div');
+		    chartDraw(chartData, 'myChart02', 'legend-div02');
+		    chartDraw(chartData, 'myChart03', 'legend-div03');
+		}
+
+		/* 설비 차트 데이터 */
+		let chartData = {
+		    labels: [
+		        '08:10', '08:20', '08:30', '08:40', '08:50', '09:00', '09:10'
+		    ],
+		    datasets: [
+		        { //데이터
+		            label: '부하',
+		            fill: false,
+		            data: [
+		                75, 200, 120, 50, 0, 75, 120 /* scalse value */
+		            ],
+		            pointRadius: 2,
+		            pointBorderWidth : 0,
+		            borderWidth: 4,
+		            backgroundColor: '#ffffff',
+		            borderColor: '#ffffff',
+		            barPercentage: 1,
+		            maxBarThickness : 20,
+		            lineTension :  0.5,
+		            type: 'line',
+		            order: 2,
+		            stack: 'Stack 0',
+		        },
+		        {
+		            label: 'RPM(Right)',
+		            fill: false,
+		            data: [
+		                1500, 2560, 1500, 1000, 0, 1500, 120  /*  scalse value */
+		            ],
+		            pointRadius: 2,
+		            pointBorderWidth : 0,
+		            borderWidth: 4,
+		            backgroundColor: '#a3a3a3',
+		            borderColor: '#a3a3a3',
+		            barPercentage: 1,
+		            maxBarThickness : 20,
+		            lineTension :  0.5,
+		            type: 'line',
+		            order: 3,
+		            stack: 'Stack 0',
+		        }
+		    ]
+		}
+
+		let chartDraw = function (data, els, legend) {
+		    let context = document.getElementById(els).getContext('2d');
+		    let lastDataIndex = chartData.datasets[0].data.length - 1;
+
+		    window.myChart = new Chart(context, {
+		        type: 'line', // 차트의 형태
+		        data: data,
+		        options: {
+		        	maintainAspectRatio: false,
+		            layout: {},
+		            plugins: {
+		                datalabels: {
+		                    color: '#fffff',
+		                    clamp: true,
+		                    clip: true,
+		                    offset: 1,//거리
+		                },
+		                legend: {
+		                    display: false,
+		                },
+		                htmlLegend: {
+		                    containerID: legend,
+		                },
+		            },
+		            interaction: {
+		              intersect: false,
+		            },
+		            scales: {
+			        	x: {
+				        	grid: {
+			                    borderDash: 0,
+				          		drawTicks: false,
+				          		drawBorder: true,
+				        	},
+				        	gridLines: {
+			                    offsetGridLines: true
+			                },
+				        	ticks: {
+				        		align: 'center',
+				        		crossAlign: 'center',
+				        		color: 'white',
+				        		beginAtZero: true,
+				        		padding: 10,
+				                font: {
+				                    size: 10,
+				                    lineHeight : 1,
+				                }
+				            },
+				    	},
+				    	 y: {
+				    		type: 'linear',
+					        position: 'right',
+					        suggestedMin: 0,
+		    				suggestedMax: 200,
+					        grid: {
+				    			tickMarkLength: 5,
+				    			drawTicks: false,
+				    			drawOnChartArea: false,
+					        },
+					        ticks: {
+					        	align: 'center',
+					        	crossAlign: 'center',
+					        	padding: 5,
+					        	color: 'white',
+				        		beginAtZero: true,
+				        		font: {
+				                    size: 10,
+				                    lineHeight : 1,
+				                }
+		                    },
+				    	},
+				    	y1: {
+				    		type: 'linear',
+					        position: 'left',
+				    		suggestedMin: 0,
+		    				suggestedMax: 200,
+				        	grid: {
+							  	color: "#FFFFFF",
+				        		tickMarkLength: 5,
+			                    drawTicks: false,
+				        	},
+				        	ticks: {
+				        		align: 'center',
+				        		crossAlign: 'center',
+				        		padding: 5,
+				        		minTicksLimit: 50,
+				        		maxTicksLimit: 50,
+				        		color: 'white',
+				        		beginAtZero: true,
+				        		font: {
+				                    size: 10,
+				                    lineHeight : 1,
+				                }
+		                    },
+					    },
+			        },
+
+		        },
+		        plugins: [htmlLegendPlugin],
+		    });
+		}
+
+		const getOrCreateLegendList = (chart, id) => {
+		  const legendContainer = document.getElementById(id);
+		  let listContainer = legendContainer.querySelector('ul');
+
+		  if (!listContainer) {
+		    listContainer = document.createElement('ul');
+		    listContainer.style.display = 'flex';
+		    listContainer.style.flexDirection = 'row';
+		    listContainer.style.margin = 0;
+		    listContainer.style.padding = 0;
+
+		    legendContainer.appendChild(listContainer);
+		  }
+
+		  return listContainer;
+		};
+
+		const htmlLegendPlugin = {
+		  id: 'htmlLegend',
+		  afterUpdate(chart, args, options) {
+		    const ul = getOrCreateLegendList(chart, options.containerID);
+
+		    // Remove old legend items
+		    while (ul.firstChild) {
+		      ul.firstChild.remove();
+		    }
+
+		    // Reuse the built-in legendItems generator
+		    const items = chart.options.plugins.legend.labels.generateLabels(chart);
+
+		    items.forEach(item => {
+		      const li = document.createElement('li');
+		      li.style.alignItems = 'center';
+		      li.style.cursor = 'pointer';
+		      li.style.display = 'flex';
+		      li.style.flexDirection = 'row';
+		      li.style.marginLeft = '10px';
+
+		      li.onclick = () => {
+		        const {type} = chart.config;
+		        if (type === 'pie' || type === 'doughnut') {
+		          // Pie and doughnut charts only have a single dataset and visibility is per item
+		          chart.toggleDataVisibility(item.index);
+		        } else {
+		          chart.setDatasetVisibility(item.datasetIndex, !chart.isDatasetVisible(item.datasetIndex));
+		        }
+		        chart.update();
+		      };
+
+		      // Color box
+		      const boxSpan = document.createElement('span');
+		      boxSpan.style.background = item.fillStyle;
+		      boxSpan.style.borderColor = item.strokeStyle;
+		      boxSpan.style.borderWidth = item.lineWidth + 'px';
+		      boxSpan.style.display = 'inline-block';
+		      boxSpan.style.width = '6px';
+		      boxSpan.style.height = '6px';
+		      boxSpan.style.marginRight = '5px';
+
+		      // Text
+		      const textContainer = document.createElement('p');
+		      textContainer.style.color = '#ffffff';
+		      textContainer.style.margin = 0;
+		      textContainer.style.padding = 0;
+		      textContainer.style.textDecoration = item.hidden ? 'line-through' : '';
+
+		      const text = document.createTextNode(item.text);
+		      textContainer.appendChild(text);
+
+		      li.appendChild(boxSpan);
+		      li.appendChild(textContainer);
+		      ul.appendChild(li);
+		    });
+		  }
+		};
+	</script>
+	<!--  modal js  -->
+	<script type="text/javascript">
+		document.addEventListener('DOMContentLoaded', function(){
+	    	var callback = function(){
+	    		alert('전송');
+	    		pop.close();
+	    	}
+	    	var pop = new modal('.modal', callback);
+	    	var addBtn = document.querySelector('#addBtn');
+	    	addBtn.addEventListener('click', function(e) {
+	        	e.preventDefault();
+	    		pop.open();
+	        });
+
+
+
+	    });
+	</script>
+</body>
+</html>

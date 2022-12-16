@@ -1,0 +1,6 @@
+
+@import url('Pretendard-1.3.3/Pretendard.css');
+:root {
+	--font-family : 'Pretendard';
+}
+* { font-family: var(--font-family); }
